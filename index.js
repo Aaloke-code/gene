@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const prefix = "/";
+const prefix = ".";
 var fs = require("fs");
 var lineReader = require("line-reader");
 var async = require("async");
@@ -24,7 +24,7 @@ bot.on("ready", () => {
 });
 
 bot.on("message", message => {
-    if (message.channel.id === "Channel_ID") { //This will make the bot work only in that channel
+    if (message.channel.id === "737893228870893588") { //This will make the bot work only in that channel
         if (message.author.bot) return;
             var command = message.content
             .toLowerCase()
@@ -38,7 +38,7 @@ bot.on("message", message => {
     if (command === "gen") {
         if (generated.has(message.author.id)) {
             message.channel.send(
-            "Wait 15 minute before generating another account!. - " +
+            "Wait 15 minutes before generating another account!. - " +
             message.author
             );
             } else {
@@ -58,21 +58,21 @@ bot.on("message", message => {
                             data = data.substr(position + 1);
                             fs.writeFile(filePath, data, function (err) {
                                 const embed = {
-                                    title: "Account Generated!",
-                                    description: "Check your dm for the account's information!",
+                                    title: "Generated!",
+                                    description: "Check your dm's for the information!",
                                     color: 8519796,
                                     timestamp: "2019-04-04T14:16:26.398Z",
                                     footer: {
                                         icon_url:
                                             "https://cdn.discordapp.com/avatars/530778425540083723/7a05e4dd16825d47b6cdfb02b92d26a5.png",
-                                        text: "Buy discord bots from Silvano#8106"
+                                        text: "Discord GEN"
                                     },
                                     thumbnail: {
                                         url:
                                             "http://www.compartosanita.it/wp-content/uploads/2019/02/right.png"
                                     },
                                     author: {
-                                        name: "Account Generator",
+                                        name: "Generator",
                                         url: "https://discordapp.com",
                                         icon_url: bot.displayAvatarURL
                                     },
